@@ -3,7 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
-	
+
   api.use([
     "templating",
     "coffeescript",
@@ -13,7 +13,10 @@ Package.on_use(function (api, where) {
   ], ["client", "server"]);
 
   api.add_files([
-    "client/register.coffee",
+    "common/register.coffee"
+  ],["client","server"]);
+
+  api.add_files([
     "client/routing.coffee",
     "client/templates/searchBox.html",
     "client/templates/searchBox.less",
