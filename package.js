@@ -7,9 +7,9 @@ Package.on_use(function (api, where) {
   api.use([
     "templating",
     "coffeescript",
-    "iron-router",
+    "iron:router",
     "less",
-    "reaction-core"
+    "reactioncommerce:core"
   ], ["client", "server"]);
 
   api.add_files([
