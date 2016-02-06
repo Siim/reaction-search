@@ -3,7 +3,7 @@ Template.searchBox.rendered = () ->
 	$("#searchBox").autocomplete(
     minLength: 1
 		source: (request, response) ->
-      Meteor.call "searchProducts", request, (error, result) ->
+      Meteor.call "searchProducts", request.term, (error, result) ->
         console.log error if error
         if result
           response result

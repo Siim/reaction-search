@@ -1,6 +1,7 @@
 Meteor.methods
-	searchProducts: (request) ->
-		searchResults = Products.find({title: {$regex : ".*#{request.term}.*", $options: "i"}}, {fields: {_id: 1, title: 1, variants: 1}})
+	searchProducts: (term) ->
+		check(term, String);
+		searchResults = ReactionCore.Collections.Products.find({title: {$regex : ".*#{term}.*", $options: "i"}}, {fields: {_id: 1, title: 1, variants: 1}})
 		autocompleteList = []
 
 		searchResults.forEach ((product) ->
