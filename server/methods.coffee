@@ -13,3 +13,17 @@ Meteor.methods
 		), autocompleteList
 
 		return autocompleteList
+	searchProductsByDate: (date) ->
+		check(date, String);
+		searchResults = ReactionCore.Collections.Products.find({forSaleOnDate: {$regex : ".*#{date}.*", $options: "i"}}, {fields: {_id: 1, title: 1, variants: 1}})
+		autocompleteList = []
+
+		searchResults.forEach ((product) ->
+			listItem =
+				value: product.title
+				id: product._id
+				price: product.variants[0].price
+			this.push(listItem)
+		), autocompleteList
+
+		return autocompleteList
