@@ -9,7 +9,8 @@ Package.on_use(function (api, where) {
     "coffeescript",
     "iron:router",
     "less",
-    "reactioncommerce:core"
+    "reactioncommerce:core",
+    "scydev:reaction-p2p-marketplace-sell-date"
   ], ["client", "server"]);
 
   api.add_files([
