@@ -10,7 +10,8 @@ Package.on_use(function (api, where) {
     "iron:router",
     "less",
     "reactioncommerce:core",
-    "scydev:reaction-p2p-marketplace-sell-date"
+    "scydev:reaction-p2p-marketplace-sell-date",
+    "rajit:bootstrap3-datepicker"
   ], ["client", "server"]);
 
   api.add_files([

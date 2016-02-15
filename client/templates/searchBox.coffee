@@ -19,6 +19,8 @@ Template.searchBox.rendered = () ->
                    """
     return  $( "<li>" ).html(listItemHtml).appendTo( ul )
 
+  $('#searchBoxDate').datepicker();
+
 	$("#searchBoxDate").autocomplete(
 		minLength: 8
 		source: (request, response) ->
