@@ -24,7 +24,9 @@ Template.searchBox.rendered = () ->
 		source: (request, response) ->
 			console.log "search date "+new Date(request.term)
 			#ReactionCore.Log.error("Failed to add to cart.", request);
-			Meteor.call "searchProductsByDate", new Date(request.term), (error, result) ->
+
+			# parse to date on server side, cause the the timezone matches the db
+			Meteor.call "searchProductsByDate", request.term, (error, result) ->
 				console.log error if error
 				if result
 					response result

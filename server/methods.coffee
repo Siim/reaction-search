@@ -14,13 +14,17 @@ Meteor.methods
 
 		return autocompleteList
 	searchProductsByDate: (date) ->
-		check(date, Date);
-		ReactionCore.Log.error("searching prods with date: ", date); # we seem to be losing a day here?!
-		searchResults = ReactionCore.Collections.Products.find({forSaleOnDate: date}, {fields: {_id: 1, title: 1, variants: 1}}) # {$regex : ".*#{date}.*", $options: "i"}
+		check(date, String);
+
+		isoDate = new Date(date)
+
+		ReactionCore.Log.info("searching prods with date: ", isoDate);
+		searchResults = ReactionCore.Collections.Products.find({forSaleOnDate: isoDate}, {fields: {_id: 1, title: 1, variants: 1}}) # {$regex : ".*#{date}.*", $options: "i"}
 		autocompleteList = []
+		#ReactionCore.Log.info("searchResults: ", searchResults);
 
 		searchResults.forEach ((product) ->
-			ReactionCore.Log.error("prod found for date: ", product.title);
+			ReactionCore.Log.info("prod found for date: ", product.title);
 			listItem =
 				value: product.title
 				id: product._id
