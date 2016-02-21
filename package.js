@@ -8,6 +8,7 @@ Package.on_use(function (api, where) {
     "templating",
     "coffeescript",
     //"iron:router",
+    "check",
     "jquery",
     "less",
     "reactioncommerce:core",
