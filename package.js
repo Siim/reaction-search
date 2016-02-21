@@ -7,24 +7,28 @@ Package.on_use(function (api, where) {
   api.use([
     "templating",
     "coffeescript",
-    "iron:router",
+    //"iron:router",
+    "check",
+    "jquery",
     "less",
-    "reactioncommerce:core"
+    "reactioncommerce:core",
+    "scydev:reaction-p2p-marketplace-sell-date",
+    "rajit:bootstrap3-datepicker"
   ], ["client", "server"]);
 
   api.add_files([
-    "common/register.coffee"
+    //"common/register.js"
   ],["client","server"]);
 
   api.add_files([
-    "client/routing.coffee",
+    //"client/routing.js",
     "client/templates/searchBox.html",
     "client/templates/searchBox.less",
-    "client/templates/searchBox.coffee"
+    "client/templates/searchBox.js"
   ], ["client"]);
 
   api.add_files([
-    "server/methods.coffee"
+    "server/methods.js"
   ], ["server"]);
 
 });
