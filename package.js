@@ -1,33 +1,34 @@
 Package.describe({
-  summary: "Reaction Search - Search Feature For Your Reaction Shop"
+  summary: "Reaction Search - Search Feature For Your Reaction Shop",
+  name: "reactioncommerce:reaction-search",
+  version: "0.2.0",
+  documentation: "README.md"
 });
 
-Package.on_use(function (api, where) {
-
+Package.onUse(function (api, where) {
+  api.versionsFrom("METEOR@1.2.1");
   api.use([
-    "templating",
-    "coffeescript",
-    //"iron:router",
+    "blaze-html-templates",
+    "ecmascript",
     "check",
     "jquery",
     "less",
-    "reactioncommerce:core",
-    "scydev:reaction-p2p-marketplace-sell-date",
-    "rajit:bootstrap3-datepicker"
-  ], ["client", "server"]);
+    "reactioncommerce:core@0.12.0",
+    "rajit:bootstrap3-datepicker@1.5.1"
+  ]);
 
-  api.add_files([
+  api.addFiles([
     //"common/register.js"
   ],["client","server"]);
 
-  api.add_files([
+  api.addFiles([
     //"client/routing.js",
     "client/templates/searchBox.html",
     "client/templates/searchBox.less",
     "client/templates/searchBox.js"
   ], ["client"]);
 
-  api.add_files([
+  api.addFiles([
     "server/methods.js"
   ], ["server"]);
 
