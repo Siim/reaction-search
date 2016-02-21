@@ -7,7 +7,8 @@ Package.on_use(function (api, where) {
   api.use([
     "templating",
     "coffeescript",
-    "iron:router",
+    //"iron:router",
+    "jquery",
     "less",
     "reactioncommerce:core",
     "scydev:reaction-p2p-marketplace-sell-date",
@@ -19,10 +20,10 @@ Package.on_use(function (api, where) {
   ],["client","server"]);
 
   api.add_files([
-    "client/routing.coffee",
+    //"client/routing.coffee",
     "client/templates/searchBox.html",
     "client/templates/searchBox.less",
-    "client/templates/searchBox.coffee"
+    "client/templates/searchBox.js"
   ], ["client"]);
 
   api.add_files([
