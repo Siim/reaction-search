@@ -16,7 +16,7 @@ Package.on_use(function (api, where) {
   ], ["client", "server"]);
 
   api.add_files([
-    "common/register.coffee"
+    //"common/register.coffee"
   ],["client","server"]);
 
   api.add_files([
